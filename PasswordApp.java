@@ -1,12 +1,24 @@
-package refactor;
+/*
+ * 
+ */
+package seguridad;
+
 import java.util.Scanner;
-import refactor.Password;
+
+import seguridad.Password;
+
 import java.util.Scanner;
 
 
+/**
+ * La clase PasswordApp.
+ *  
+ * @author Eduardo Diaz Sanchez
+ * @version 1.1
+ */
 public class PasswordApp {
 	  
-	    public static void main(String[] args) {
+    	public static void main(String[] args) {
 	  
 	    	    Scanner sc = new Scanner(System.in);
 		        System.out.println("Introduce cuantas contraseñas quiere que genere");
