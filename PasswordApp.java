@@ -1,8 +1,10 @@
-package refactor;
+package seguridad;
 import java.util.Scanner;
-import refactor.Password;
 import java.util.Scanner;
 
+/**
+ * @author Mario L
+ */
 
 public class PasswordApp {
 	  
