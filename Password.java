@@ -1,4 +1,4 @@
-package refactor;
+package seguridad;
 
 
 public class Password {
