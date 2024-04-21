@@ -1,6 +1,9 @@
 package refactor;
 
-
+/**
+ * Autor: Airan
+ * Versión: 1.1
+ */
 public class Password {
 
 	//Constantes
@@ -15,7 +18,7 @@ public class Password {
     /**
      * Longitud de la contraseÃ±a
      */
-    private int longitud;
+    private int longitudcontraseya;
     /**
      * caracteres de la contraseÃ±a
      */
@@ -27,16 +30,16 @@ public class Password {
      * Devuelve la longitud
      * @return longitud de la contraseÃ±a
      */
-    public int getLongitud() {
-        return longitud;
+    public int getLongitudcontraseya() {
+        return longitudcontraseya;
     }
   
     /**
      * Modifica la longitud de la contraseÃ±a
-     * @param longitud a cambiar
+     * @param longitudcontraseya a cambiar
      */
-    public void setLongitud(int longitud) {
-        this.longitud = longitud;
+    public void setLongitudcontraseya(int longitudcontraseya) {
+        this.longitudcontraseya = longitudcontraseya;
     }
   
     /**
@@ -53,26 +56,35 @@ public class Password {
      */
     public String generaPassword (){
         String password="";
-        for (int i=0;i<longitud;i++){
+        for (int i = 0; i< longitudcontraseya; i++){
             //Generamos un numero aleatorio, segun este elige si aÃ±adir una minuscula, mayuscula o numero
             int eleccion=((int)Math.floor(Math.random()*3+1));
   
             if (eleccion==1){
-                char minusculas=(char)((int)Math.floor(Math.random()*(123-97)+97));
-                password+=minusculas;
+                password = generarMinusculas(123, 97, password);
             }else{
                 if(eleccion==2){
-                    char mayusculas=(char)((int)Math.floor(Math.random()*(91-65)+65));
-                    password+=mayusculas;
+                    password = generarMayusculas(91, 65, password);
                 }else{
-                    char numeros=(char)((int)Math.floor(Math.random()*(58-48)+48));
-                    password+=numeros;
+                    password = generarMayusculas(58, 48, password);
                 }
             }
         }
         return password;
     }
-  
+
+    private static String generarMayusculas(int x, int x1, String password) {
+        char mayusculas = (char) ((int) Math.floor(Math.random() * (x - x1) + x1));
+        password += mayusculas;
+        return password;
+    }
+
+    private static String generarMinusculas(int x, int x1, String password) {
+        char minusculas = (char) ((int) Math.floor(Math.random() * (x - x1) + x1));
+        password += minusculas;
+        return password;
+    }
+
     /**
      * Comprueba la fortaleza de la contraseÃ±a
      * @return
@@ -111,10 +123,10 @@ public class Password {
   
     /**
      * La contrasena sera la pasada por parametro
-     * @param longitud
+     * @param longitudcontraseya
      */
-    public Password (int longitud){
-        this.longitud=longitud;
+    public Password (int longitudcontraseya){
+        this.longitudcontraseya = longitudcontraseya;
         contrasena=generaPassword();
     }
 
