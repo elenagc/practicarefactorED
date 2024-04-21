@@ -3,7 +3,10 @@ import java.util.Scanner;
 import refactor.Password;
 import java.util.Scanner;
 
-
+/**
+ * Autor: Airan
+ * Versión: 1.1
+ */
 public class PasswordApp {
 	  
 	    public static void main(String[] args) {
