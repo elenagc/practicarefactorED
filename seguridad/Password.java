@@ -1,3 +1,8 @@
+/**
+ * Autor: Héctor
+ * Versión: 1.1
+ */
+
 package refactor;
 
 
@@ -15,11 +20,11 @@ public class Password {
     /**
      * Longitud de la contraseÃ±a
      */
-    private int longitud;
+    private int longitudcontrasenya;
     /**
      * caracteres de la contraseÃ±a
      */
-    private String contrasena;
+    private String contrasenya;
   
     //Metodos publicos
   
@@ -100,7 +105,25 @@ public class Password {
             return false;
         }
     }
+    
+    public void generarMinusculas() {
+    	String password = "";
+        char minuscula = (char) ((int) Math.floor(Math.random() * (123 - 97) + 97));
+        password += minuscula;
+    }
+    
+    public void generaMayusculas() {
+    	v
+        char mayusculas=(char)((int)Math.floor(Math.random()*(91-65)+65));
+        password = mayusculas;
+    }
   
+    public void generaNumeros() {
+        String password = "";
+    	char numeros=(char)((int)Math.floor(Math.random()*(58-48)+48));
+        password+=numeros;
+    }
+    
     //Constructores
     /**
      * Crea una contraseÃ±a al azar
