@@ -1,6 +1,10 @@
-package refactor;
+//Angelo Valverde version 1.1
+package seguridad;
+
 import java.util.Scanner;
-import refactor.Password;
+
+import seguridad.Password;
+
 import java.util.Scanner;
 
 
