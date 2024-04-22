@@ -1,8 +1,12 @@
-package refactor;
 
+/**
+ * Autor: [Mykhaylo Freyishyn Novychenko]
+ * Versión: 1.1
+ */
+
+package seguridad;
 
 public class Password {
-
 	//Constantes
 	  
     /**
@@ -13,68 +17,95 @@ public class Password {
     //Atributos
   
     /**
-     * Longitud de la contraseÃ±a
+     * Longitud de la contrasenya
      */
-    private int longitud;
+    private int longitudcontrasenya;
     /**
-     * caracteres de la contraseÃ±a
+     * caracteres de la contrasenya
      */
-    private String contrasena;
+    private String contrasenya;
   
     //Metodos publicos
   
     /**
      * Devuelve la longitud
-     * @return longitud de la contraseÃ±a
+     * @return longitud de la contrasenya
      */
     public int getLongitud() {
-        return longitud;
+        return longitudcontrasenya;
     }
   
     /**
-     * Modifica la longitud de la contraseÃ±a
+     * Modifica la longitud de la contrasenya
      * @param longitud a cambiar
      */
-    public void setLongitud(int longitud) {
-        this.longitud = longitud;
+    public void setLongitudContrasenya(int longitud) {
+        this.longitudcontrasenya = longitud;
     }
   
     /**
-     * Devuelve la contraseÃ±a
-     * @return contraseÃ±a
+     * Devuelve la contrasenya
+     * @return contrasenya
      */
-    public String getContrasena() {
-        return contrasena;
+    public String getcontrasenya() {
+        return contrasenya;
     }
   
     /**
-     * Genera una contraseÃ±a al azar con la longitud que este definida
-     * @return contraseÃ±a
+     * Genera una contrasenya al azar con la longitud que este definida
+     * @return contrasenya
      */
     public String generaPassword (){
         String password="";
-        for (int i=0;i<longitud;i++){
-            //Generamos un numero aleatorio, segun este elige si aÃ±adir una minuscula, mayuscula o numero
+        for (int i=0;i<longitudcontrasenya;i++){
+            //Generamos un numero aleatorio, segun este elige si aniadir una minuscula, mayuscula o numero
             int eleccion=((int)Math.floor(Math.random()*3+1));
   
             if (eleccion==1){
-                char minusculas=(char)((int)Math.floor(Math.random()*(123-97)+97));
-                password+=minusculas;
+                password += generaMinuscula();
             }else{
                 if(eleccion==2){
-                    char mayusculas=(char)((int)Math.floor(Math.random()*(91-65)+65));
-                    password+=mayusculas;
+                    password += generaMayuscula();
                 }else{
                     char numeros=(char)((int)Math.floor(Math.random()*(58-48)+48));
-                    password+=numeros;
+                    password += generaNumero();
                 }
             }
         }
         return password;
     }
-  
+    
+    
     /**
-     * Comprueba la fortaleza de la contraseÃ±a
+     * Genera caracteres minúscula al azar
+     * 
+     * @return 
+     */
+    private char generaMinuscula() {
+    	return (char)((int)Math.floor(Math.random() * (123-97) + 97 ));
+    }
+    
+    /**
+     * Genera caracteres mayúscula al azara
+     * 
+     * @return
+     */
+    private char generaMayuscula() {
+    	return (char)((int)Math.floor(Math.random() * (91-65) + 65));
+    }
+    
+    /**
+     * Genera número al azar
+     * 
+     * @return
+     */
+    private char generaNumero() {
+    	return (char)((int)Math.floor(Math.random() * (58-48) + 48));
+    }
+  
+    
+    /**
+     * Comprueba la fortaleza de la contrasenya
      * @return
      */
     public boolean esFuerte(){
@@ -82,18 +113,18 @@ public class Password {
         int cuentaminusculas=0;
         int cuentamayusculas=0;
         //Vamos caracter a caracter y comprobamos que tipo de caracter es
-        for (int i=0;i<contrasena.length();i++){
-                if (contrasena.charAt(i)>=97 && contrasena.charAt(i)<=122){
+        for (int i=0;i<contrasenya.length();i++){
+                if (contrasenya.charAt(i)>=97 && contrasenya.charAt(i)<=122){
                     cuentaminusculas+=1;
                 }else{
-                    if (contrasena.charAt(i)>=65 && contrasena.charAt(i)<=90){
+                    if (contrasenya.charAt(i)>=65 && contrasenya.charAt(i)<=90){
                         cuentamayusculas+=1;
                 }else{
                     cuentanumeros+=1;
                     }
                 }
             }
-            //Si la constraseÃ±a tiene mas de 5 numeros, mas de 1 minuscula y mas de 2 mayusculas
+            //Si la contrasenya tiene mas de 5 numeros, mas de 1 minuscula y mas de 2 mayusculas
             if (cuentanumeros>=5 && cuentaminusculas>=1 && cuentamayusculas>=2){
             return true;
         }else{
@@ -101,21 +132,21 @@ public class Password {
         }
     }
   
+    
     //Constructores
     /**
-     * Crea una contraseÃ±a al azar
+     * Crea una contrasenya al azar
      */
     public Password (){
         this(LONG_DEF);
     }
   
     /**
-     * La contrasena sera la pasada por parametro
+     * La contrasenya sera la pasada por parametro
      * @param longitud
      */
     public Password (int longitud){
-        this.longitud=longitud;
-        contrasena=generaPassword();
+        this.longitudcontrasenya=longitud;
+        contrasenya=generaPassword();
     }
-
 }
