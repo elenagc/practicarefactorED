@@ -1,8 +1,9 @@
-package refactor;
+package seguridad;
 import java.util.Scanner;
-import refactor.Password;
 import java.util.Scanner;
-
+/* Author: Missell VD
+ * Version: 1.1
+ */
 
 public class PasswordApp {
 	  
@@ -29,4 +30,3 @@ public class PasswordApp {
 	    }
 	  
 	}
-
