@@ -1,6 +1,7 @@
-package refactor;
+//Christian Merchán Gallego v1.1
+package Seguridad;
 import java.util.Scanner;
-import refactor.Password;
+import Seguridad.Password;
 import java.util.Scanner;
 
 
