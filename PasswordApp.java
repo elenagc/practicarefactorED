@@ -1,8 +1,17 @@
-package refactor;
-import java.util.Scanner;
-import refactor.Password;
+package seguridad;
 import java.util.Scanner;
 
+import seguridad.Password;
+
+import java.util.Scanner;
+
+/**
+ * 
+ * @author Adrian Ramirez Lobo
+ * 
+ * @version 1.1
+ * 
+ * */
 
 public class PasswordApp {
 	  
