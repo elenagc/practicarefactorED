@@ -1,6 +1,8 @@
-package refactor;
-import java.util.Scanner;
-import refactor.Password;
+package Seguridad;
+/* 
+ * @Author Sergio Oyola Márquez
+ * @Version 1.1
+ */
 import java.util.Scanner;
 
 
