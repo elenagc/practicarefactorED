@@ -1,4 +1,4 @@
-package refactor;
+package seguridad;
 
 
 public class Password {
@@ -19,7 +19,7 @@ public class Password {
     /**
      * caracteres de la contraseÃ±a
      */
-    private String contrasena;
+    private String contrasenya;
   
     //Metodos publicos
   
@@ -44,7 +44,7 @@ public class Password {
      * @return contraseÃ±a
      */
     public String getContrasena() {
-        return contrasena;
+        return contrasenya;
     }
   
     /**
@@ -58,15 +58,12 @@ public class Password {
             int eleccion=((int)Math.floor(Math.random()*3+1));
   
             if (eleccion==1){
-                char minusculas=(char)((int)Math.floor(Math.random()*(123-97)+97));
-                password+=minusculas;
+                this.generarMinuscula(password);
             }else{
                 if(eleccion==2){
-                    char mayusculas=(char)((int)Math.floor(Math.random()*(91-65)+65));
-                    password+=mayusculas;
+                	this.generarMayuscula(password);
                 }else{
-                    char numeros=(char)((int)Math.floor(Math.random()*(58-48)+48));
-                    password+=numeros;
+                	this.generarNumero(password);
                 }
             }
         }
@@ -82,11 +79,11 @@ public class Password {
         int cuentaminusculas=0;
         int cuentamayusculas=0;
         //Vamos caracter a caracter y comprobamos que tipo de caracter es
-        for (int i=0;i<contrasena.length();i++){
-                if (contrasena.charAt(i)>=97 && contrasena.charAt(i)<=122){
+        for (int i=0;i<contrasenya.length();i++){
+                if (contrasenya.charAt(i)>=97 && contrasenya.charAt(i)<=122){
                     cuentaminusculas+=1;
                 }else{
-                    if (contrasena.charAt(i)>=65 && contrasena.charAt(i)<=90){
+                    if (contrasenya.charAt(i)>=65 && contrasenya.charAt(i)<=90){
                         cuentamayusculas+=1;
                 }else{
                     cuentanumeros+=1;
@@ -115,7 +112,19 @@ public class Password {
      */
     public Password (int longitud){
         this.longitud=longitud;
-        contrasena=generaPassword();
+        contrasenya=generaPassword();
+    }
+    public void generarMinuscula(String password) {
+    	  char minusculas=(char)((int)Math.floor(Math.random()*(123-97)+97));
+          password+=minusculas;
+    }
+    public void generarMayuscula(String password) {
+        char mayusculas=(char)((int)Math.floor(Math.random()*(91-65)+65));
+        password+=mayusculas;
+    }
+    public void generarNumero(String password) {
+        char numeros=(char)((int)Math.floor(Math.random()*(58-48)+48));
+        password+=numeros;
     }
 
 }
