@@ -1,5 +1,10 @@
 package refactor;
+package seguridad;
 
+/**
+ * @author Roberto Monedero Alonso
+ * @version 1.1
+ */
 
 public class Password {
 
@@ -15,45 +20,105 @@ public class Password {
     /**
      * Longitud de la contraseÃ±a
      */
-    private int longitud;
+    private int longitudcontrasenya;
     /**
      * caracteres de la contraseÃ±a
      */
-    private String contrasena;
+    private String contrasenya;
   
     //Metodos publicos
   
     /**
-     * Devuelve la longitud
-     * @return longitud de la contraseÃ±a
+     * Devuelve la palabra a minúsculas
+     * @return generaMinusculas de la palabra
      */
-    public int getLongitud() {
-        return longitud;
+    public void generaMinusculas() {
+        if (eleccion = 1) {
+            char minusculas = (char) ((int) Math.floor(Math.random()*(123-97) + 97));
+            password += minusculas;
+        }
+        else{
+            if (eleccion == 2) {
+                char mayusculas = (char) ((int) Math.floor(Math.random()*(91-65) + 65));
+                password += mayusculas;
+            }else{
+                char numeros = (char) ((int) Math.floor(Math.random()*(58-48) + 48));
+                password += numeros;
+            }
+        }
+    }
+    /**
+     * Devuelve la palabra a mayúsculas
+     * @return generaMayusculas de la palabra
+     */
+
+    public void generaMayusculas(){
+        if (eleccion = 1) {
+            char minusculas = (char) ((int) Math.floor(Math.random()*(123-97) + 97));
+            password += minusculas;
+        }
+        else{
+            if (eleccion == 2) {
+                char mayusculas = (char) ((int) Math.floor(Math.random()*(91-65) + 65));
+                password += mayusculas;
+            }else{
+                char numeros = (char) ((int) Math.floor(Math.random()*(58-48) + 48));
+                password += numeros;
+            }
+        }
+    }
+
+    /**
+     * Devuelve la palabra a numeros
+     * @return generaNumeros de la palabra
+     */
+    public void generaNumeros() {
+        if (eleccion = 1) {
+            char minusculas = (char) ((int) Math.floor(Math.random()*(123-97) + 97));
+            password += minusculas;
+        }
+        else{
+            if (eleccion == 2) {
+                char mayusculas = (char) ((int) Math.floor(Math.random()*(91-65) + 65));
+                password += mayusculas;
+            }else{
+                char numeros = (char) ((int) Math.floor(Math.random()*(58-48) + 48));
+                password += numeros;
+            }
+        }
+    }
+
+    /**
+     * Devuelve la longitudcontrasenya
+     * @return longitudcontrasenya de la contraseÃ±a
+     */
+    public int getlongitudcontrasenya() {
+        return longitudcontrasenya;
     }
   
     /**
-     * Modifica la longitud de la contraseÃ±a
-     * @param longitud a cambiar
+     * Modifica la longitudcontrasenya de la contraseÃ±a
+     * @param longitudcontrasenya a cambiar
      */
-    public void setLongitud(int longitud) {
-        this.longitud = longitud;
+    public void setlongitudcontrasenya(int longitudcontrasenya) {
+        this.longitudcontrasenya = longitudcontrasenya;
     }
   
     /**
      * Devuelve la contraseÃ±a
      * @return contraseÃ±a
      */
-    public String getContrasena() {
-        return contrasena;
+    public String getcontrasenya() {
+        return contrasenya;
     }
   
     /**
-     * Genera una contraseÃ±a al azar con la longitud que este definida
+     * Genera una contraseÃ±a al azar con la longitudcontrasenya que este definida
      * @return contraseÃ±a
      */
     public String generaPassword (){
         String password="";
-        for (int i=0;i<longitud;i++){
+        for (int i=0;i<longitudcontrasenya;i++){
             //Generamos un numero aleatorio, segun este elige si aÃ±adir una minuscula, mayuscula o numero
             int eleccion=((int)Math.floor(Math.random()*3+1));
   
@@ -82,11 +147,11 @@ public class Password {
         int cuentaminusculas=0;
         int cuentamayusculas=0;
         //Vamos caracter a caracter y comprobamos que tipo de caracter es
-        for (int i=0;i<contrasena.length();i++){
-                if (contrasena.charAt(i)>=97 && contrasena.charAt(i)<=122){
+        for (int i=0;i<contrasenya.length();i++){
+                if (contrasenya.charAt(i)>=97 && contrasenya.charAt(i)<=122){
                     cuentaminusculas+=1;
                 }else{
-                    if (contrasena.charAt(i)>=65 && contrasena.charAt(i)<=90){
+                    if (contrasenya.charAt(i)>=65 && contrasenya.charAt(i)<=90){
                         cuentamayusculas+=1;
                 }else{
                     cuentanumeros+=1;
@@ -110,12 +175,12 @@ public class Password {
     }
   
     /**
-     * La contrasena sera la pasada por parametro
-     * @param longitud
+     * La contrasenya sera la pasada por parametro
+     * @param longitudcontrasenya
      */
-    public Password (int longitud){
-        this.longitud=longitud;
-        contrasena=generaPassword();
+    public Password (int longitudcontrasenya){
+        this.longitudcontrasenya=longitudcontrasenya;
+        contrasenya=generaPassword();
     }
 
 }
