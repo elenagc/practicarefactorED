@@ -1,6 +1,5 @@
-package refactor;
-import java.util.Scanner;
-import refactor.Password;
+package seguridad;
+
 import java.util.Scanner;
 
 
