@@ -1,7 +1,7 @@
-package refactor;
+//Asier Sánchez Arias 1.1
+package refactor.seguridad;
 import java.util.Scanner;
-import refactor.Password;
-import java.util.Scanner;
+import refactor.seguridad.Password;
 
 
 public class PasswordApp {
